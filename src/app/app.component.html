@@ -5,8 +5,17 @@
         <app-contact-intro></app-contact-intro>
       </div>
       <div class="col-xs-12 col-md-6">
-        <contact-form></contact-form>
+        <contact-form (notify)="onFormSubmit($event)"></contact-form>
       </div>
     </div>
+    <small *ngIf="submitted" class="text-danger">
+      <span *ngIf="firstName">First Name: {{ firstName }}</span
+      ><br />
+      <span *ngIf="lastName">Last Name: {{ lastName }}</span
+      ><br />
+      <span *ngIf="email">Email: {{ email }}</span
+      ><br />
+      <span *ngIf="phoneNumber">Phone Number: {{ phoneNumber }}</span>
+    </small>
   </div>
 </div>

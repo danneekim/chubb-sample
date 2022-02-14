@@ -16,9 +16,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { ContactIntroComponent } from './contact/contact-intro/contact-intro.component';
+import { PhoneMaskDirective } from './directives/phone-mask.directive';
 
 @NgModule({
-  declarations: [AppComponent, ContactFormComponent, ContactIntroComponent],
+  declarations: [
+    AppComponent,
+    ContactFormComponent,
+    ContactIntroComponent,
+    PhoneMaskDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,4 +1,4 @@
-<form id="contactForm">
+<form id="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <mat-card>
     <mat-card-header>
       <mat-card-subtitle>Your contact info</mat-card-subtitle>
@@ -7,23 +7,41 @@
       <div class="row no-gutters">
         <mat-form-field class="col-md-6 mat-focused">
           <mat-label>First Name</mat-label>
-          <input matInput placeholder="First Name" />
+          <input
+            matInput
+            placeholder="First Name"
+            formControlName="firstName"
+          />
+          <mat-error>This field is required.</mat-error>
         </mat-form-field>
         <mat-form-field class="col-md-6 pl-1 mat-focused">
           <mat-label>Last Name</mat-label>
-          <input matInput placeholder="Last Name" />
+          <input matInput placeholder="Last Name" formControlName="lastName" />
+          <mat-error>This field is required.</mat-error>
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field class="col w-100 mat-focused">
           <mat-label>Email Address</mat-label>
-          <input matInput placeholder="example@email.com" />
+          <input
+            matInput
+            type="email"
+            placeholder="example@email.com"
+            formControlName="email"
+          />
+          <mat-error>This field is required.</mat-error>
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field class="col w-100 mat-focused">
           <mat-label>Phone Number</mat-label>
-          <input matInput placeholder="Phone Number" />
+          <input
+            matInput
+            placeholder="Phone Number"
+            formControlName="phoneNumber"
+            phoneMask
+          />
+          <mat-error class="p-0">This field is required.</mat-error>
         </mat-form-field>
       </div>
     </mat-card-content>
